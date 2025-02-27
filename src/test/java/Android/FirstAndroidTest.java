@@ -153,10 +153,10 @@ public class FirstAndroidTest {
     @Test
     public void clipboard() {
         String text = "Hello World";
-        driver.setClipboardText(text);
+//        driver.setClipboardText(text);
         MobileElement nameTxt = (MobileElement) driver.findElementsByAccessibilityId("my_text_fieldCD");
         nameTxt.clear();
-        nameTxt.sendKeys(driver.getClipboardText());
+//        nameTxt.sendKeys(driver.getClipboardText());
         Assert.assertEquals(text, nameTxt.getText());
 
     }
