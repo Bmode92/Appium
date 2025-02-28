@@ -2,7 +2,7 @@
 <suite name="Suite" parallel="tests">
     <test name="iOS">
         <classes>
-            <class name="ToDoAppIOS"/>
+            <class name="tests.ToDoAppIOS"/>
         </classes>
     </test>
 </suite>

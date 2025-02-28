@@ -1,13 +1,15 @@
+package tests;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.BeforeTest;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class TestBase {
+public class TestBase extends AbstractTestNGCucumberTests {
 
     public static AppiumDriver driver;
 

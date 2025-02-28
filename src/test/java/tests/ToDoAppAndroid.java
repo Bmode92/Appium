@@ -1,3 +1,5 @@
+package tests;
+
 import PageObjects.CreateTaskPage;
 import PageObjects.TasksListPage;
 import org.json.simple.parser.ParseException;
