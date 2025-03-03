@@ -13,14 +13,18 @@ public class TestBase extends AbstractTestNGCucumberTests {
 
     public static AppiumDriver driver;
 
-    public static void iOS_setUp() throws MalformedURLException {
+    //appium -p 10000(replace with port)
+    //appium -p 10001(replace with port)
+    public static void iOS_setUp(String port, String deviceName, String platformVersion, String udid, String wdaLocalPort) throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "iOS");
-        capabilities.setCapability("platformVersion", "14.4");
-        capabilities.setCapability("deviceName", "IPhone 12 mini");
+        capabilities.setCapability("platformVersion", platformVersion);
+        capabilities.setCapability("deviceName", deviceName);
         capabilities.setCapability("app",
                 System.getProperty("user.dir") + "/apps/ToDo.apk");
-        driver = new IOSDriver(new URL("https://localhost:4723/wd/hub"), capabilities);
+        capabilities.setCapability("wdaLocalPort", wdaLocalPort);
+        capabilities.setCapability("udid", udid);
+        driver = new IOSDriver(new URL("https://localhost:" + port + "/wd/hub"), capabilities);
     }
 
     public static void Android_setUp() throws MalformedURLException {
